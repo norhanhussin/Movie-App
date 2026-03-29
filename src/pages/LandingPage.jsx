@@ -29,8 +29,9 @@ const LandingPage = () => {
     const navigate = useNavigate()
 
     const handlePopularChange = async (type) => {
+        setPopularTab(type)
+        setPopularMovies([]) // ← امسحي الداتا الأول
         try {
-            setPopularTab(type)
             if (type === "movie") {
                 const res = await getPopular(language)
                 setPopularMovies(res.data.results)
@@ -45,12 +46,13 @@ const LandingPage = () => {
 
     const handleTrailerChange = async (type) => {
         setTrailerTab(type)
+        setTrailerMovies([])
         try {
             if (type === "popular") {
-                const res = await getPopular()
+                const res = await getPopular(language)
                 setTrailerMovies(res.data.results)
             } else {
-                const res = await getNowPlaying()
+                const res = await getNowPlaying(language)
                 setTrailerMovies(res.data.results)
             }
         } catch (error) {
