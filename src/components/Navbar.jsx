@@ -44,7 +44,7 @@ export default function Navbar() {
                 <span className="bg-[#01b4e4] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center shadow-sm animate-in zoom-in duration-300">
                   {wishlistCount}
                 </span>
-              ):null}
+              ) : null}
             </Link>
           </ul>
         </div>
@@ -95,6 +95,9 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-4 text-black dark:text-white">
+          {}
+          <DarkModeToggle />
+
           <FaBars
             className="text-xl cursor-pointer hover:text-[#01b4e4] transition-colors"
             onClick={() => setMenuOpen(true)}
@@ -118,7 +121,7 @@ export default function Navbar() {
                 <span className="bg-[#01b4e4] text-white text-xs font-bold px-2 py-0.5 rounded-full min-w-[20px] text-center">
                   {wishlistCount}
                 </span>
-              ):null}
+              ) : null}
             </Link>
 
             <div className="h-px bg-white/10 my-2" />
